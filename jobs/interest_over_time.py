@@ -4,7 +4,7 @@ import pandas as pd
 class Interest:
 
     def __init__(self):
-        self.computer_label= None
+        self.computer_label = None
         self.interest = None
         self.date = None
 

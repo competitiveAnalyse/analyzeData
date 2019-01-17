@@ -5,8 +5,9 @@ date_begin :
 date_end :
 
 # Current Time Minus Time Pattern
-# By hour: 'now #-H' By day : 'now #-d' and by month : 'today #-m' and if you want all the data : 'all'
-date_pattern :
+# By hour: 'now #-H' only with (1-H and 4-H) By day : 'now #-d'
+# and by month : 'today #-m' and if you want all the data : ''
+date_pattern : 'today 12-m'
 
 # Geo by default worldwide. If you want by country it's a 2 letters abbreviation example : FR, GB, US
 # if you want a specific province : US-AL --> Alabama
@@ -14,4 +15,4 @@ geo:
 
 
 # Keyword list for your search
-terms : ['ASUS', 'ACER']
+terms : ['ASUS', 'ACER', 'Alienware']

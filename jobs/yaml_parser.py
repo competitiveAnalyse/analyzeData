@@ -16,7 +16,8 @@ class YamlParser:
         if (yaml_config.get('date_begin') is not None) and (yaml_config.get('date_end') is not None):
             self.date = yaml_config.get('date_begin') + ' ' + yaml_config.get('date_end')
         else:
-            self.date = yaml_config.get('date_pattern') if yaml_config.get('date_pattern') is not None else 'today 3-m'
+            self.date = yaml_config.get('date_pattern') if yaml_config.get('date_pattern') is not None else 'now 4-H'
+            print(self.date)
 
         self.geo = yaml_config.get('geo') if yaml_config.get('geo') is not None else ''
 
@@ -24,3 +25,4 @@ class YamlParser:
             print('No terms')
             exit()
         self.terms = yaml_config.get('terms')
+
