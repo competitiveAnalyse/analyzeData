@@ -1,0 +1,17 @@
+# Timeframe for the data if any it'll be last 5 years
+
+# The format should be : 'YYYY-MM-DD'
+date_begin :
+date_end :
+
+# Current Time Minus Time Pattern
+# By hour: 'now #-H' By day : 'now #-d' and by month : 'today #-m' and if you want all the data : 'all'
+date_pattern :
+
+# Geo by default worldwide. If you want by country it's a 2 letters abbreviation example : FR, GB, US
+# if you want a specific province : US-AL --> Alabama
+geo:
+
+
+# Keyword list for your search
+terms : ['ASUS', 'ACER']
