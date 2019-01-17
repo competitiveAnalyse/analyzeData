@@ -30,5 +30,5 @@ def word_cloud_by_label(py_trend, yp, name):
         plt.imshow(word_cloud, interpolation="bilinear")
         plt.axis("off")
         plt.margins(x=0, y=0)
-        plt.savefig('output/related_queries_{}_word_{}.png'.format(name, term))
+        plt.savefig('output/related_queries_{}_word_{}_1.png'.format(name, term))
 

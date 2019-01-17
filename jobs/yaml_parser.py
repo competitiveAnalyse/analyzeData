@@ -7,7 +7,7 @@ class YamlParser:
         # Open yaml file
         self.date = None
         try:
-            yaml_config = yaml.load(open('config/googleTrends.yaml'))
+            yaml_config = yaml.load(open('../config/googleTrends.yaml'))
         except:
             print("No googleTrends yaml in config")
             raise EnvironmentError
@@ -16,7 +16,7 @@ class YamlParser:
         if (yaml_config.get('date_begin') is not None) and (yaml_config.get('date_end') is not None):
             self.date = yaml_config.get('date_begin') + ' ' + yaml_config.get('date_end')
         else:
-            self.date = yaml_config.get('date_pattern') if yaml_config.get('date_pattern') is not None else 'now 4-H'
+            self.date = yaml_config.get('date_pattern') if yaml_config.get('date_pattern') is not None else 'today 12-m'
             print(self.date)
 
         self.geo = yaml_config.get('geo') if yaml_config.get('geo') is not None else ''
