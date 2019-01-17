@@ -1,1 +1,9 @@
 .idea
+venv
+*.pyc
+__pycache__
+output/*.png
+*.ipynb
+jobs/test.py
+analyze/*
+test.py
