@@ -1,3 +1,9 @@
 ipython == 7.2.0
 notebook == 5.7.4
 pytrends == 4.4.0
+matplotlib == 3.0.2
+PyYAML == 3.13
+elasticsearch == 6.3.1
+wordcloud == 1.5.0
+Pillow == 5.4.1
+Flask == 1.0.2
