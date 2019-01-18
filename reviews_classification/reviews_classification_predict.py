@@ -1,12 +1,17 @@
 from flair.models import TextClassifier
 from flair.data import Sentence
+import pandas as pd
 
 classifier = TextClassifier.load_from_file('C:/Users/jeanc/Documents/reviews/model/final-model.pt')
 
 # create example sentence
-sentence = Sentence('you can build your own computer which will be more powerful and probably better looking for less than the price they are selling them for.')
-
+test = pd.DataFrame()
 # predict tags and print
-classifier.predict(sentence)
+def fun(x):
+    sent = Sentence(x)
+    classifier.predict(sent)
+    for label in sent.labels:
+        return label.value
 
-print(sentence.labels)
+
+test['label1'] = test['tweet'].apply(fun)
