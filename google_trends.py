@@ -14,7 +14,7 @@ py_trend.build_payload(kw_list=yp.terms, timeframe=yp.date, geo=yp.geo)
 pds = py_trend.interest_over_time()
 
 fig = plt.figure(1, figsize=(10, 3))
-pds.plot(title='Comparison between different terms.')
+pds.plot(title='Popularity over time')
 plt.gcf().subplots_adjust(bottom=0.15)
 plt.savefig('output/interest_over_time.png')
 

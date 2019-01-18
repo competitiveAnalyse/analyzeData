@@ -17,6 +17,7 @@ def bar_chart_label(py_trend, label, name):
 
 
 def word_cloud_by_label(py_trend, yp, name):
+    plt.close()
     for term in yp.terms:
         query = py_trend.related_queries()[term][name]["query"]
         value = py_trend.related_queries()[term][name]["value"]
@@ -27,8 +28,9 @@ def word_cloud_by_label(py_trend, yp, name):
         # Create the wordcloud object
         word_cloud = WordCloud(width=480, height=480, collocations=False).generate(text)
         plt.figure()
+        plt.title('Word most frequent {}'.format(term))
         plt.imshow(word_cloud, interpolation="bilinear")
         plt.axis("off")
         plt.margins(x=0, y=0)
-        plt.savefig('output/related_queries_{}_word_{}_1.png'.format(name, term))
+        plt.savefig('output/related_queries_{}_word_{}.png'.format(name, term))
 
