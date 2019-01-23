@@ -7,7 +7,7 @@ class YamlParser:
         # Open yaml file
         self.date = None
         try:
-            yaml_config = yaml.load(open('config/googleTrends.yaml'))
+            yaml_config = yaml.load(open('../config/googleTrends.yaml'))
         except:
             print("No googleTrends yaml in config")
             raise EnvironmentError
