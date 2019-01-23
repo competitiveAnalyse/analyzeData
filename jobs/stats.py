@@ -97,7 +97,7 @@ class Stats:
             dic.update({'date': i})
             list_json.append(dic)
 
-        with open('names.csv', 'w', newline='') as csvfile:
+        with open('output/outsiders.csv', 'w', newline='') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             for i in list_json:

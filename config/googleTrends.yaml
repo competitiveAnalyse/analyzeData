@@ -11,8 +11,8 @@ date_pattern: 'today 3-m'
 
 # Geo by default worldwide. If you want by country it's a 2 letters abbreviation example : FR, GB, US
 # if you want a specific province : US-AL --> Alabama
-geo:
+geo: 'FR'
 
 
-# Keyword list for your search
+# Keyword list for your search no more than 5
 terms: ['ASUS', 'ACER', 'MSI', 'RAZER', 'Alienware']
