@@ -1,8 +1,8 @@
-.idea
+gi.idea
 venv
 *.pyc
 __pycache__
-output/*.png
+output/*
 *.ipynb
 jobs/test.py
 analyze/*

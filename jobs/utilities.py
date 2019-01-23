@@ -8,12 +8,17 @@ def search_interest_label(i, df):
         df.plot(color='r', title='Search interest for {}'.format(i))
     plt.gcf().subplots_adjust(bottom=0.15)
     plt.savefig('output/interest_over_time_{}.png'.format(i), dpi=100)
+    plt.clf()
 
 
 def bar_chart_label(py_trend, label, name):
-    py_trend.related_queries()[label][name].plot.bar(x="query", rot=90)
+    try:
+        py_trend.related_queries()[label][name].plot.bar(x="query", rot=90)
+    except:
+        print(name, label, py_trend.related_queries()[label][name])
     plt.gcf().subplots_adjust(bottom=0.5)
     plt.savefig('output/related_queries_{}_{}.png'.format(name, label))
+    plt.clf()
 
 
 def word_cloud_by_label(py_trend, yp, name):
@@ -33,4 +38,5 @@ def word_cloud_by_label(py_trend, yp, name):
         plt.axis("off")
         plt.margins(x=0, y=0)
         plt.savefig('output/related_queries_{}_word_{}.png'.format(name, term))
+        plt.clf()
 
