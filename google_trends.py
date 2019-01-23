@@ -6,6 +6,8 @@ from jobs.stats import Stats
 import warnings
 import datetime
 import time
+from jobs import reviews_dataset_cleaning
+
 warnings.simplefilter(action='ignore', category=FutureWarning)
 warnings.simplefilter(action='ignore', category=RuntimeWarning)
 
@@ -55,6 +57,9 @@ for i in list_pandas:
     st.check_value(i, yp)
 
 st.generate_to_csv()
+
+
+reviews_dataset_cleaning.generate_word_cloud(yp, min_date, max_date)
 
 print('Execution Time : {}'.format(time.time() - t1))
 
