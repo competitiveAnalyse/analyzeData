@@ -15,7 +15,6 @@ class Stats:
     @staticmethod
     def hours_to_day(pd, label):
         dict_days = dict()
-        print(pd)
         for i in pd.index.values:
             i_datetime = datetime.datetime.utcfromtimestamp(i.tolist() / 1e9)
             string = '{}-{}-{}'.format(i_datetime.year, i_datetime.month, i_datetime.day)
@@ -32,10 +31,8 @@ class Stats:
         return dict_days
 
     def model_condition(self, pd, label):
-        print(label)
         head = str([i for i in pd.head()][0])
         condition = (np.std(pd[head]), np.average(pd[head]))
-        print(condition)
         self.conditions.update({label: condition})
 
     def generate_condition(self, yp, min_date, max_date):
@@ -46,7 +43,6 @@ class Stats:
             py_trend.build_payload(kw_list=[i], timeframe=time_frame, geo=yp.geo)
             pd = py_trend.interest_over_time()
             self.model_condition(pd, i)
-        print("END")
 
     def check_value(self, df, yp):
         py_trend = TrendReq()
@@ -70,10 +66,6 @@ class Stats:
             if value == 0:
                 dict_days_out_pattern.update({date: 'No data'})
             elif not ((average - 2 * std) < value < (average + 2 * std)):
-                print("std : {}".format(std))
-                print('std : {}'.format(average))
-                print((average - 6 * std), (average + 6 * std))
-                print(value)
                 dict_days_out_pattern.update({date: ((value/average - 1) * 100)})
 
         new_dict = dict()

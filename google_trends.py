@@ -5,9 +5,11 @@ import matplotlib.pyplot as plt
 from jobs.stats import Stats
 import warnings
 import datetime
+import time
 warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.simplefilter(action='ignore', category=RuntimeWarning)
 
-
+t1 = time.time()
 yp = YamlParser()
 
 py_trend = TrendReq()
@@ -22,6 +24,7 @@ fig = plt.figure(1, figsize=(10, 3))
 pds.plot(title='Popularity over time')
 plt.gcf().subplots_adjust(bottom=0.15)
 plt.savefig('output/interest_over_time.png')
+plt.clf()
 
 count = 0
 for i in yp.terms:
@@ -35,7 +38,6 @@ for i in yp.terms:
 ut.word_cloud_by_label(py_trend, yp, 'top')
 ut.word_cloud_by_label(py_trend, yp, 'rising')
 
-yp = YamlParser()
 py_trend = TrendReq()
 list_pandas = list()
 
@@ -54,7 +56,7 @@ for i in list_pandas:
 
 st.generate_to_csv()
 
-
+print('Execution Time : {}'.format(time.time() - t1))
 
 
 
